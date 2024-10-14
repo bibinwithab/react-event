@@ -4,6 +4,8 @@ import MainPage from "./components/MainPage";
 import GalleryPage from "./components/GalleryPage";
 import CertificationsPage from "./components/CertificationsPage";
 import styled from "styled-components";
+import logo from './assets/Main_page/logo.png'
+import ProjectsPage from "./components/ProjectsPage";
 
 const App = () => {
   return (
@@ -11,11 +13,12 @@ const App = () => {
       <AppContainer>
         <Header>
           <Logo>
-            <LogoImage src="./assets/Main_page/logo.png" alt="Logo" />
+            <LogoImage src={logo} alt="Logo" />
           </Logo>
           <NavBar>
             <StyledLink to="/">Main</StyledLink>
             <StyledLink to="/gallery">Gallery</StyledLink>
+            <StyledLink to="/projects">Projects</StyledLink>
             <StyledLink to="/certifications">Certifications</StyledLink>
             <StyledLink to="/contacts">Contacts</StyledLink>
           </NavBar>
@@ -26,7 +29,8 @@ const App = () => {
             <Route path="/" element={<MainPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/certifications" element={<CertificationsPage />} />
-            {/* Add more routes if you have additional pages */}
+            <Route path="/projects" element={ProjectsPage}/>
+            {/* more routes */}
           </Routes>
         </Content>
         <Footer>
@@ -59,7 +63,7 @@ const StyledLink = styled(Link)`
 const Footer = styled.footer`
   padding: 20px;
   background: black;
-  color: white;
+  color: grey;
   text-align: center;
 `;
 
